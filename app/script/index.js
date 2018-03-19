@@ -31,7 +31,7 @@ import Timecompont from './../components/Time.vue'
 
     var app = new Vue({
         el: '#app',
-        // data: {
+        data: {
         //    time: 'dddss',
         //    days: [
         //        "日",
@@ -48,7 +48,22 @@ import Timecompont from './../components/Time.vue'
         //    date: new Date(),
         //    showMouth: null,
         //    showYear: null,
-        // },
+              inputText: [
+                {
+                    day:'2018-3-20',
+                    text: '有票',
+                    color: 'red'
+                }, {
+                    day: '2018-3-21',
+                    text: '有票',
+                    color: 'red'
+                }, {
+                    day:'2018-3-22',
+                    text: '有票',
+                    color: 'red'
+                }],
+             
+        },
         components: {
             'Apps': Apps,
             'Timecompont': Timecompont

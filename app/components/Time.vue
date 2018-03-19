@@ -14,7 +14,7 @@
             </div>
             <div class="time-all-block">
                 <div class="time-in-head" v-for="item in 7"></div>
-                <div class="time-in-block" v-for="(item, i) in smallDate" @click="showdate(item)" :class="{'noborder-top':i<7,'time-in-color':choosei==item}">
+                <div class="time-in-block" v-for="(item, i) in smallDate" @click="showdate(item,showTexts[i])" :class="{'noborder-top':i<7,'time-in-color':choosei==item}">
                     <div class="time-small-block"  v-if="item">
                            <div class="text-day" :class="{'is-below': isBelow}">{{item}}</div>
                            <div class="below-text" v-if="showTexts[i]" :style="'color:'+showTexts[i].color">{{showTexts[i]?showTexts[i].text:''}}</div>
@@ -48,7 +48,8 @@ export default {
            showMouth: null,
            showYear: null,
            choosei: 0,
-           isBelow: true,
+           isBelow: true, //是否显示底部的字//false的时候，文字上下居中,true的时候,
+
            showTexts: [],
            inputText: [
                {
@@ -66,6 +67,9 @@ export default {
                }],
         }
     },
+    props:[
+       
+    ],
     methods:{
         end(){
             // console.log(new Date());
@@ -162,7 +166,7 @@ export default {
             self.showMouth = self.showMouth + 1;
             self.smallDate = self.setAllday(self.day().year,self.showMouth);
         },
-        showdate(day){
+        showdate(day,isChoose){
             var self = this;
             if(!day){
                 return false;
