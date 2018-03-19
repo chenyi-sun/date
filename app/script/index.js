@@ -5,7 +5,7 @@ require('./img');
 import Vue from 'vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
-import Time from './../components/Time.vue'
+import Timecompont from './../components/Time.vue'
 
 // function change(paremary){
 //     this.name = "ss";
@@ -51,7 +51,7 @@ import Time from './../components/Time.vue'
         // },
         components: {
             'Apps': Apps,
-            'Time': Time
+            'Timecompont': Timecompont
         },
         // methods:{
         //     end(){
