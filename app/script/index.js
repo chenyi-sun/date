@@ -45,6 +45,7 @@ import Apps from './../components/App.vue'
 
            ],
            date: new Date(),
+           showMouth: null,
         },
         components: {
             'Apps': Apps
@@ -96,6 +97,16 @@ import Apps from './../components/App.vue'
                     arr.push(i+1);
                 }
                 return arr;
+            },
+            pre(){
+               var self = this;
+               self.showMouth = self.showMouth - 1;
+               self.smallDate = self.setAllday(self.day().year,self.showMouth);
+            },
+            next(){
+               var self = this;
+               self.showMouth = self.showMouth + 1;
+               self.smallDate = self.setAllday(self.day().year,self.showMouth);
             }
         },
         count(){
@@ -105,6 +116,7 @@ import Apps from './../components/App.vue'
             var self = this;
             this.$nextTick(function(){
                 self.end();
+                self.showMouth = self.day().mounth;
                 var date = self.day().year+'-'+self.day().mounth+'-'+'01'
                 console.log(self.setDateName(date));
                 self.smallDate = self.setAllday(self.day().year,self.day().mounth);

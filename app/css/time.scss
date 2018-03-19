@@ -75,6 +75,20 @@ $bordercolor:#dedede;
             text-align: center;
             padding: 18px 0px;
         }
+        .next,.pre{
+            width: 30px;
+            padding-top: 30px;
+            background: grey;
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            border-radius: 100%;
+        }
+        .next{
+            left: auto;
+            right: 0px;
+        }
     }
 }
 @media screen and (max-width: 500px){
@@ -83,6 +97,10 @@ $bordercolor:#dedede;
         .time-all-head {
             .in-block {
                 padding: 8px 0px;
+            }
+            .next,.pre{
+                width: 25px;
+                padding-top:25px; 
             }
         }
     }

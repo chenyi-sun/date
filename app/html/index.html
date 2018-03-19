@@ -12,12 +12,15 @@
        {{time}}
        <div class="time">
            <div class="time-head">
-               <div class="year">{{year()}}年{{day().mounth}}</div>
+               <div class="year">{{year()}}年{{showMouth}}</div>
+
            </div>
            <div class="time-all-head">
                <div class="in-block" v-for="(item,i) in 7">
                     {{days[i]}}
                </div>
+               <div class="next" @click="next"></div>
+               <div class="pre" @click="pre"></div>
            </div>
            <div class="time-all-block">
                <div class="time-in-head" v-for="item in 7"></div>
