@@ -12,8 +12,8 @@
        {{time}}
        <div class="time">
            <div class="time-head">
-               <div class="year">{{year()}}年{{showMouth}}</div>
-
+               <div class="year">{{showYear}}年</div>
+               <div class="munth">{{showMouth}}月</div>
            </div>
            <div class="time-all-head">
                <div class="in-block" v-for="(item,i) in 7">
@@ -24,7 +24,7 @@
            </div>
            <div class="time-all-block">
                <div class="time-in-head" v-for="item in 7"></div>
-               <div class="time-in-block" v-for="(item, i) in smallDate" :class="{'noborder-top':i<7}">
+               <div class="time-in-block" v-for="(item, i) in smallDate" @click="showdate(item)" :class="{'noborder-top':i<7}">
                    <div class="time-small-block">
                          {{item}}
                    </div>

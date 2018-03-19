@@ -46,6 +46,7 @@ import Apps from './../components/App.vue'
            ],
            date: new Date(),
            showMouth: null,
+           showYear: null,
         },
         components: {
             'Apps': Apps
@@ -96,17 +97,37 @@ import Apps from './../components/App.vue'
                 for(var i = 0; i< mounthdaylength; i++){
                     arr.push(i+1);
                 }
+                var totalLength = Math.ceil(arr.length/7);
+                var len = totalLength*7-arr.length;
+                console.log('totalLength'+totalLength);
+                console.log();
+                if(arr.length<totalLength*7){
+                    for(var i = 0;i<len;i++){
+                        arr.push(null);
+                    }
+                }
                 return arr;
             },
             pre(){
                var self = this;
+               if(self.showMouth==1){
+                    self.showMouth = 13;
+                    self.showYear = self.showYear - 1;
+               }
                self.showMouth = self.showMouth - 1;
-               self.smallDate = self.setAllday(self.day().year,self.showMouth);
+               self.smallDate = self.setAllday(self.showYear,self.showMouth);
             },
             next(){
                var self = this;
                self.showMouth = self.showMouth + 1;
                self.smallDate = self.setAllday(self.day().year,self.showMouth);
+            },
+            showdate(day){
+                var self = this;
+                if(!day){
+                    return false;
+                }
+                console.log(self.showYear + '-'+self.showMouth+'-'+day);
             }
         },
         count(){
@@ -117,6 +138,7 @@ import Apps from './../components/App.vue'
             this.$nextTick(function(){
                 self.end();
                 self.showMouth = self.day().mounth;
+                self.showYear = self.day().year;
                 var date = self.day().year+'-'+self.day().mounth+'-'+'01'
                 console.log(self.setDateName(date));
                 self.smallDate = self.setAllday(self.day().year,self.day().mounth);
