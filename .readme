@@ -1,1 +1,9 @@
-vue-learn 的基础上添加
+#用的基础结构是 webpack-learn里面的learn-vue-animation
+
+#基于vue的日历插件,
+1.兼容浏览器-手机端
+浏览器的尺寸为屏幕的一半
+
+手机端的尺寸为屏幕全部
+
+2.样式参考calendar-price的样式

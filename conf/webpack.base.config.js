@@ -189,5 +189,5 @@ var devSet = {
         }
     },
 }
-console.log(devSet.output.filename);
+// console.log(devSet.output.filename);
 module.exports = devSet;

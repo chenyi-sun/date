@@ -9,11 +9,30 @@
 </head>
 <body>
     <div id="app">
-        {{sss}}
+       {{time}}
+       <div class="time">
+           <div class="time-head">
+               <div class="year">{{year()}}年{{day().mounth}}</div>
+           </div>
+           <div class="time-all-head">
+               <div class="in-block" v-for="(item,i) in 7">
+                    {{days[i]}}
+               </div>
+           </div>
+           <div class="time-all-block">
+               <div class="time-in-head" v-for="item in 7"></div>
+               <div class="time-in-block" v-for="(item, i) in smallDate" :class="{'noborder-top':i<7}">
+                   <div class="time-small-block">
+                         {{item}}
+                   </div>
+                   <div class="in-right"></div>
+               </div>
+           </div>
+       </div>
         <!--<apps></apps>-->
     </div>
-    <a href="./second.html">sss</a>
-    <br/>
+    <!--<a href="./second.html">sss</a>
+    <br/>-->
     <!--<img imgsrc="./../imgs/s.jpg" alt="" id="b" s="no">-->
 </body>
 <script src="./../script/index.js"></script>

@@ -1,0 +1,89 @@
+$bordercolor:#dedede;
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+    border: 0px;
+}
+.time{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    .time-head{
+        width: 100%;
+        text-align: center;
+        .year{
+            display: inline-block;
+            font-size: 18px;
+            padding: 5px;
+        }
+    }
+    .time-all-block,.time-all-head{
+        width: calc(100% - 2px);
+        font-size: 0px;
+        border-left: 1px solid $bordercolor;
+        border-right: 1px solid $bordercolor;
+        border-bottom: 1px solid $bordercolor;
+        .time-small-block{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+           
+        }
+        .time-in-block{
+            width: percentage(1/7);
+            padding-top: percentage(1/7);
+            background: white;
+            display: inline-block;
+            position: relative;
+            // border-bottom: 1px solid grey;
+            border-top: 1px solid $bordercolor;
+            &:nth-child(7n+7){
+               .in-right,.in-left{
+                   border: none;
+               }
+            }
+            .in-right,.in-left{
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                border-right: 1px solid $bordercolor;
+                
+            }
+        }
+        .noborder-top{
+            border-top: none;
+        }
+    }
+    .time-all-head{
+        width: 100%;
+        background: #f7f7f7;
+        border: none;
+        .in-block{
+            width: percentage(1/7);
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            padding: 18px 0px;
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .time{
+        width: 90%;
+        .time-all-head {
+            .in-block {
+                padding: 8px 0px;
+            }
+        }
+    }
+}
