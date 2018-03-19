@@ -57,11 +57,15 @@ export default {
                    text: '有票',
                    color: 'red'
                }, {
-                   day: '2018-3-21',
+                   day: '2018-2-21',
                    text: '有票',
                    color: 'red'
                }, {
                    day:'2018-3-22',
+                   text: '有票',
+                   color: 'red'
+               }, {
+                   day:'2018-2-22',
                    text: '有票',
                    color: 'red'
                }],

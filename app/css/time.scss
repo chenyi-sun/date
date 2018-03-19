@@ -126,5 +126,13 @@ $bordercolor:#dedede;
                 padding-top:25px; 
             }
         }
+        .time-all-block {
+            .time-small-block{
+                .below-text{
+                   white-space: nowrap;
+                   overflow: hidden;
+                }
+            } 
+        }
     }
 }
