@@ -9,8 +9,12 @@
                 <div class="in-block" v-for="(item,i) in 7">
                         {{days[i]}}
                 </div>
-                <div class="next" @click="next"></div>
-                <div class="pre" @click="pre"></div>
+                <div class="next" @click="next">
+                    <div class="in"></div>
+                </div>
+                <div class="pre" @click="pre">
+                    <div class="in in-left"></div>
+                </div>
             </div>
             <div class="time-all-block">
                 <div class="time-in-head" v-for="item in 7"></div>
@@ -55,7 +59,7 @@ export default {
                {
                    day:'2018-3-20',
                    text: '有票',
-                   color: 'red'
+                   color: 'blue'
                }, {
                    day: '2018-2-21',
                    text: '有票',

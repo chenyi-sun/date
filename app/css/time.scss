@@ -4,6 +4,7 @@ $bordercolor:#dedede;
     padding: 0px;
     font-size: 0px;
     border: 0px;
+    user-select:none;
 }
 .time{
     width: 50%;
@@ -99,14 +100,28 @@ $bordercolor:#dedede;
             padding: 18px 0px;
         }
         .next,.pre{
-            width: 30px;
-            padding-top: 30px;
+            width: 20px;
+            padding-top: 20px;
             background: grey;
             display: inline-block;
             position: absolute;
             left: 0px;
             top: 0px;
             border-radius: 100%;
+            cursor: pointer;
+            .in{
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid white;
+                border-right: 1px solid white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-75%, -50%) rotate(45deg);
+            }
+            .in-left{
+                transform: translate(-25%, -50%) rotate(-135deg);
+            }
         }
         .next{
             left: auto;
